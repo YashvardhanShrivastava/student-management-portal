@@ -7,7 +7,7 @@ const attendanceRoutes = require("./routes/attendanceRoutes");
 
 // Import Routes
 const studentRoutes = require("./routes/studentRoutes");
-const authRoutes = require("./routes/authRoutes"); // NEW (auth added)
+const authRoutes = require("./routes/authRoutes"); 
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/attendance", attendanceRoutes);
 
 // MongoDB Connection
-const MONGODB_URI = "const MONGODB_URI = process.env.MONGO_URI";
+const MONGODB_URI = process.env.MONGO_URI;
 
 mongoose
   .connect(MONGODB_URI)
@@ -26,7 +26,7 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Routes
-app.use("/api/auth", authRoutes); // NEW route added
+app.use("/api/auth", authRoutes);
 app.use("/api/students", studentRoutes);
 
 // Homepage
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 });
 
 // Start Server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
