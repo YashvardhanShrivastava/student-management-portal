@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/attendance", attendanceRoutes);
 
 // MongoDB Connection
-const MONGODB_URI = "mongodb://127.0.0.1:27017/student_portal";
+const MONGODB_URI = "const MONGODB_URI = process.env.MONGO_URI";
 
 mongoose
   .connect(MONGODB_URI)
