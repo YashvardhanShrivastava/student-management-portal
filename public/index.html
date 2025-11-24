@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Management Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <div class="dashboard-container">
+
+      <!-- NAVBAR -->
+      <div class="navbar">
+        <h2>Student Management Portal</h2>
+        <div class="nav-right">
+          <span id="user-info"></span>
+          <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+      </div>
+
+      <!-- WELCOME -->
+      <div class="welcome-section">
+        <h1 id="dashboard-title">Welcome</h1>
+        <p id="dashboard-subtitle"></p>
+      </div>
+
+      <!-- Student Only: My Attendance Button -->
+   <a href="myAttendance.html" id="student-attendance-link" class="primary-btn">
+  View My Attendance
+</a>
+
+      <!-- DASHBOARD CARDS (Coordinator Only) -->
+      <div id="dashboard-cards" class="dashboard-cards"></div>
+
+      <!-- ADD / EDIT STUDENT (Coordinator Only) -->
+      <div class="form-card" id="student-form-card">
+        <h2>Add / Edit Student</h2>
+
+        <form id="student-form">
+          <input type="hidden" id="student-id" />
+
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="name" required />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" required />
+          </div>
+
+          <div class="form-group">
+            <label>Course</label>
+            <input type="text" id="course" required />
+          </div>
+
+          <div class="form-group">
+            <label>Year</label>
+            <input type="number" id="year" min="1" max="6" required />
+          </div>
+
+          <div class="form-group">
+            <label>Roll Number</label>
+            <input type="text" id="rollNumber" required />
+          </div>
+
+          <button type="submit" id="submit-btn">Add Student</button>
+          <button type="button" id="cancel-edit-btn" class="secondary-btn" style="display:none;">
+            Cancel Edit
+          </button>
+        </form>
+
+        <p id="message" class="message"></p>
+      </div>
+
+
+
+
+
+      <!-- STUDENT LIST -->
+      <div class="table-card">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Roll No.</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="students-table-body"></tbody>
+        </table>
+      </div>
+<!-- ATTENDANCE SECTION -->
+<div class="table-card" id="attendance-section" style="margin-top: 25px;">
+  <h2>Daily Attendance</h2>
+
+  <!-- Date Picker -->
+  <div class="form-group">
+    <label>Select Date:</label>
+    <input type="date" id="attendance-date" />
+  </div>
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="attendance-table-body"></tbody>
+  </table>
+
+  <!-- Save Button -->
+  <button id="save-attendance-btn" class="secondary-btn" style="margin-top: 15px;">
+    Save Attendance
+  </button>
+</div>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Attendance - Student Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <h2>My Attendance</h2>
+
+      <div class="nav-right">
+        <span id="user-info"></span>
+        <button id="logout-btn" class="logout-btn">Logout</button>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="welcome-section">
+      <h1>Your Attendance</h1>
+      <p>You can view your daily attendance record here.</p>
+    </div>
+
+    <!-- Attendance History -->
+    <div class="table-card">
+      <h2>Attendance History</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="attendance-history-table"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="myAttendance.js"></script>
+</body>
+</html>
